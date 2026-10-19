@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f1e9">
+  <title>Tierlist</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <main class="workspace">
+    <header class="topbar">
+      <a class="wordmark" href="./" aria-label="Tierlist home"><span class="mark">T</span> tierlist</a>
+      <div class="top-actions"><span class="saved-status" id="saved-status">Saved on this device</span><button class="clear-button" id="export-config-button" type="button">Export Config</button><button class="clear-button" id="import-config-button" type="button">Import Config</button><input id="config-file" type="file" accept=".json,application/json" hidden><button class="clear-button" id="export-button" type="button">PNG Export ↗</button><button class="clear-button" id="reset-button" type="button">Reset</button></div>
+    </header>
+
+    <section class="heading">
+      <div class="eyebrow">YOUR RANKING, YOUR RULES</div>
+      <div class="title-line"><h1 id="list-title" contenteditable="true" spellcheck="false" aria-label="Tier list title">My tier list</h1><span class="edit-hint">click to rename</span></div>
+    </section>
+
+    <section class="board" id="board" aria-label="Tier list"></section>
+    <button class="add-tier-button" id="add-tier-button" type="button">＋ Add tier</button>
+
+    <section class="pool-section" aria-label="Unranked items">
+      <div class="pool-head"><div><h2>Unranked</h2><span class="pool-count" id="pool-count">0 items</span></div><span class="drag-note" id="paste-note">Drag images into a tier · Ctrl+V to paste</span></div>
+      <div class="pool" id="pool" data-dropzone="pool"></div>
+      <form class="add-form" id="add-form">
+        <label class="upload-button" for="image-input">＋ <span>Choose image</span></label>
+        <input id="image-input" type="file" accept="image/*" required aria-label="Choose image">
+        <input id="item-input" autocomplete="off" maxlength="48" placeholder="Name" aria-label="Image name" required>
+        <input id="point-input" autocomplete="off" maxlength="12" placeholder="Points" aria-label="Image points" required>
+        <button type="submit">Add image <span>↵</span></button>
+        <span id="form-status" class="form-status" aria-live="polite"></span>
+      </form>
+    </section>
+    <footer><span>Made for ranking the things you love.</span><span class="key-hint">TIP <b>✦</b> Drag to rank · double click to remove</span></footer>
+  </main>
+</body>
+</html>
